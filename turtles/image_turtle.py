@@ -14,6 +14,7 @@ class ImageTurtle(BaseTurtle):
 
     def teardown(self):
         self.turtle.save_as(self.filename)
+        
     
     
 if __name__ == "__main__":

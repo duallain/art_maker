@@ -14,6 +14,9 @@ class BaseTurtle(ABC):
     def teardown(self):
         pass
 
+    def wait(self):
+        pass
+
     def _inches_to_pixels(self, inches):
         inches_to_pixels = 96
 

@@ -16,7 +16,9 @@ class BaseScenario(ABC):
         
     def get_turtle(self):
         if self.previewMode:
-            self.turtleClass = PreviewTurtle(self.canvas_height, self.canvas_width)
+            # passing in all the args b/c base class isn't quite working as expected with args
+            # need to figure this out
+            self.turtleClass = PreviewTurtle(False, self.next_svg_name(), self.canvas_height, self.canvas_width)
         else:
             self.turtleClass = ImageTurtle(self.next_svg_name(), self.canvas_height, self.canvas_width)
             
@@ -28,6 +30,7 @@ class BaseScenario(ABC):
     def run(self):
         self.get_turtle()
         self.draw()
+        self.turtleClass.wait()
         self.turtleClass.teardown()
     
     
